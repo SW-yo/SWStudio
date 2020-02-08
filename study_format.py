@@ -9,5 +9,5 @@ if num <= 50:
 else:
     result = "がんばったな"
 
-text = f"{num}点だなんて{result}"
+text = f"また{num}点だなんて{result}"
 print(text)
