@@ -63,4 +63,4 @@ for num in numlist:
     sum += num
 else:
     #breakされなかったときは合計した値を出力する
-    print("合計", sum)
+    print("合計:", sum)
