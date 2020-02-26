@@ -7,14 +7,14 @@ chat = open(chat_file, "w")
 
 chat_set = set()
 
-select_kind = input("どのチャット？(1:ch,2:ハバチャ,3:密,6:討伐):")
+select_kind = input("どのチャット？(0:仲間,1:ch,2:ハバチャ,3:密,6:討伐)※スペース区切りOK:")
 start_date = input("いつからのログ？(yy/mm/dd)：")
 
 for file_name in file_list:
     try:
         with open(file_name, "r" ,errors='ignore') as file:
             for line in file:
-                if line[1:2] == select_kind:
+                if line[1:2] in select_kind:
                     if line[4:12] >= start_date:
                         chat_set.add(line)
     except Exception as e:
