@@ -85,7 +85,6 @@ a = np.array([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8 ,9, 7, 9, 3])
 #a.sort()
 #print(a)
 a_decend = np.sort(a)[::-1]
-print(a_decend)
 """
 a = np.sort([4, 6, 3, 9, 1, 2, 5])
 print(a)
