@@ -1,5 +1,6 @@
 import math
 import random
+import matplotlib.pyplot as plt
 import scratch_05 as sc5
 
 def normal_approximation_to_binomal(n, p):
@@ -144,5 +145,12 @@ def B(alpha, beta):
 
 def beta_pdf(x, alph, beta):
     if x <0 or x > 1:       #[0, 1]の区間外では重みは0となる
-        return()
+        return 0
     return x ** (alpha - 1) * (1 - x) **(beta - 1) / B(alpha, beta)
+
+
+xs = [x / 100 for x in range(0, 100)]
+alpha = 4
+beta = 16
+plt.plot(xs, [beta_pdf(x, alpha, beta) for x in xs])
+plt.show()

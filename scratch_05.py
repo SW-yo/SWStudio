@@ -71,7 +71,7 @@ def inverse_normal_cdf(p, mu=0, sigma=1, tolerance=0.00001):
 
     low_z, low_p = -10.0, 0     #normal_cdf(-10)は0(に近い値)である
     hi_z, hi_p = 10.0, 1        #normal_cdf(10)は1(に近い値)である
-    while hi_z - loz > tolerance:
+    while hi_z - low_z > tolerance:
         mid_z = (low_z + hi_z) / 2  #中央の値および
         mid_p = normal_cdf(mid_z)   #その地点でのcdfの値
         if mid_p < p:
@@ -100,19 +100,20 @@ def make_hist(p, n, num_points):
 
     #二項分布を棒グラフでプロットする
     histgram = Counter(data)
+    """
     plt.bar([x - 0.4 for x in histgram.keys()],
         [v / num_points for v in histgram.values()],
         0.8,
         color='0.75')
-
+    """
     mu = p * n
     sigma = math.sqrt(n * p * (1- p))
 
     #正規分布の近似を折線グラフでプロットする
-    xs = range(min(data), max(data) + 1)
-    ys = [normal_cdf(i + 0.5, mu, sigma) - normal_cdf(i -0.5, mu, sigma) for i in xs]
-    plt.plot(xs, ys)
-    plt.title("binomial Distribution vs Normal Approximation")
-    plt.show()
+    #xs = range(min(data), max(data) + 1)
+    #ys = [normal_cdf(i + 0.5, mu, sigma) - normal_cdf(i -0.5, mu, sigma) for i in xs]
+    #plt.plot(xs, ys)
+    #plt.title("binomial Distribution vs Normal Approximation")
+    #plt.show()
 
 make_hist(0.75, 100, 10000)
