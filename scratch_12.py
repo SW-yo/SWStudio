@@ -75,7 +75,8 @@ class NaiveBayesClassifier:
 
 #ファイルを展開した場所に従ってpathを設定する
 #元データ：https://spamassassin.apache.org/old/publiccorpus/
-path = r"/Users/saitouyouichirou/python/SWStudio/spam/*/*"
+#path = r"/Users/saitouyouichirou/python/spam/*/*"
+path = r"../spam/*/*"
 
 data = []
 

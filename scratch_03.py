@@ -1,5 +1,5 @@
 from functools import reduce
-"""
+
 def vector_add(v, w):
     #対応する要素の和
     return [v_i + w_i for v_i, w_i in zip(v, w)]
@@ -16,8 +16,7 @@ def vector_sum(vectors):
 v = [x, y]
 w = vector_sum(v)
 print(w)
-"""
-"""
+
 A =[[1, 2, 3],
 [4, 5, 6]]
 
@@ -31,7 +30,7 @@ def shape(A):
     return num_rows, num_cols
 
 print(shape(A))
-"""
+
 
 def make_matrix(num_rows, num_cols, entry_fn):
     #num_rows ×　num_colsの行列を返す

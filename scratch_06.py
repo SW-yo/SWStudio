@@ -143,14 +143,24 @@ def B(alpha, beta):
     #確率の総和が1となるように定数で正規化する
     return math.gamma(alpha) * math.gamma(beta) / math.gamma(alpha + beta)
 
-def beta_pdf(x, alph, beta):
+def beta_pdf(x, alpha, beta):
     if x <0 or x > 1:       #[0, 1]の区間外では重みは0となる
         return 0
     return x ** (alpha - 1) * (1 - x) **(beta - 1) / B(alpha, beta)
 
 
 xs = [x / 100 for x in range(0, 100)]
-alpha = 4
-beta = 16
-plt.plot(xs, [beta_pdf(x, alpha, beta) for x in xs])
+"""
+plt.plot(xs, [beta_pdf(x, alpha=1, beta=1) for x in xs], '-', label='Beta(1,1)')
+plt.plot(xs, [beta_pdf(x, alpha=10, beta=10) for x in xs], '-.', label='Beta(10,10)')
+plt.plot(xs, [beta_pdf(x, alpha=4, beta=16) for x in xs], ':', label='Beta(4,16)')
+plt.plot(xs, [beta_pdf(x, alpha=16, beta=4) for x in xs], '--', label='Beta(16,4)')
+plt.legend(loc='upper center')
+"""
+
+plt.plot(xs, [beta_pdf(x, alpha=4, beta=8) for x in xs], '-', label='Beta(1,1)')
+plt.plot(xs, [beta_pdf(x, alpha=23, beta=27) for x in xs], '-.', label='Beta(10,10)')
+plt.plot(xs, [beta_pdf(x, alpha=33, beta=17) for x in xs], ':', label='Beta(4,16)')
+plt.legend(loc='upper left')
+
 plt.show()
